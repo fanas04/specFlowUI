@@ -53,7 +53,6 @@ namespace SpecFlowProject.StepDefinitions
             await _loginPage.HomePageLoginButton();
         }
 
-
         [When(@"I click login button")]
         public async Task GivenUserClickLoginLink()
         {
