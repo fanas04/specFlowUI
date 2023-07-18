@@ -1,5 +1,5 @@
 1. What test cases should be executed while testing?
-Lack of AC to write test case, but I can try:
+Lack of AC to write a test case, but I'll try:
  
 Feature: Changing customer information
   As a user
@@ -21,7 +21,7 @@ Scenario: Unauthorized user attempts to update someone else's information
 
 Scenario: Updating name and surname with minimum allowed values
   Given I am a logged-in user
-  When I make a request to update my name and surname with the minimum allowed values
+  When I make a request to update my name and surname with minimum allowed values
   Then the system should update my information successfully
 
 Scenario: Invalid request with missing data
@@ -32,7 +32,7 @@ Scenario: Invalid request with missing data
 Scenario: Invalid request with incomplete data
   Given I am a logged-in user
   When I make a request to update my name and surname with incomplete data
-  Then the system should respond with an appropriate error message indicating the missing data
+  Then the system should respond with an appropriate error message indicating the incomplete data
 
 Scenario: Invalid request with invalid data formats for name and surname
   Given I am a logged-in user
@@ -76,7 +76,7 @@ Scenario: Performance and scalability testing
 2. What kind of risks you would identify for this endpoint (in other words: what could have gone wrong if we left bugs)?
 Data Integrity Issues: Bugs in the endpoint could lead to incorrect or inconsistent data being stored in the system. For example, if the update operation fails to validate and sanitize user input properly, it may result in corrupted or malformed data being stored in the customer's name or surname fields.
 Authorization Flaws: Bugs in the authorization and authentication mechanisms of the endpoint could allow unauthorized users to modify customer information. This could lead to data breaches, privacy violations, and unauthorized access to sensitive customer data.
-Input Validation Vulnerabilities: If the endpoint does not properly validate and sanitize user input, it may be vulnerable to various security threats such as SQL injection, cross-site scripting (XSS), or other forms of injection attacks. Malicious users could exploit these vulnerabilities to manipulate or access customer data.
+Input Validation Vulnerabilities: If the endpoint does not properly validate and sanitize user input, it may be vulnerable to various security threats, such as SQL injection, cross-site scripting (XSS), or other forms of injection attacks. Malicious users could exploit these vulnerabilities to manipulate or access customer data.
 Inconsistent or Incomplete Updates: Bugs in the endpoint's logic could result in inconsistent or incomplete updates to the customer's name and surname. For example, if the endpoint fails to handle error conditions or doesn't update all relevant components of the system, it may leave the customer's information in an inconsistent state.
 Performance and Scalability Issues: If the endpoint is not optimized or tested for performance and scalability, it could lead to slow response times, timeouts, or system crashes when handling a large number of concurrent requests. This could impact user experience and cause disruptions in service.
 Error Handling and Messaging: Inadequate error handling and messaging can make it difficult for users and developers to identify and troubleshoot issues. Unclear error messages, lack of proper logging, or failure to communicate specific error conditions may lead to confusion, frustration, and delays in resolving issues.
@@ -87,6 +87,6 @@ Compatibility and Integration Problems: Changes to the endpoint could potentiall
 Will not work without:
 *Authorization: Authorization header is used to include authentication credentials. Without this header or with an invalid or expired token, the endpoint may reject the request and return an unauthorized response.
 *Content-Type: This header specifies the format of the request payload being sent to the endpoint. It is crucial to set the correct Content-Type header to match the expected format (e.g., application/json, application/x-www-form-urlencoded, multipart/form-data) for the request body to be processed correctly.
-*Content-Length: header is used to indicate the size of the request or response body in bytes. It specifies the length of the content being sent in the HTTP message, allowing the recipient to accurately determine the end of the content.
+*Content-Length: Header is used to indicate the size of the request or response body in bytes. It specifies the length of the content being sent in the HTTP message, allowing the recipient to accurately determine the end of the content.
 *Host: Host header is an HTTP header that specifies the domain name or IP address of the server to which the client is making an HTTP request. It helps the server identify the target host or virtual host that should handle the incoming request when multiple websites or services are hosted on the same server.
-*User-Agent: The User-Agent header contains information about the client making the request, such as the type of browser or application. While not strictly necessary for the endpoint to work. This header for analytics or to provide specialized responses based on the client type.
+*User-Agent: The User-Agent header contains information about the client making the request, such as the type of browser or application. This header is used for analytics or to provide specialized responses based on the client type.

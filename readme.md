@@ -3,11 +3,11 @@
     - Ensure that solution has access to "C:\Users\{username}\AppData\Local\ms-playwright" and is able to run chromium engine.
 	
 - Was made:
-	- Created new playwright project
-	- Test case coverd by SpecFlow
-	- All automation framework is ready to deploy to any CI/CD pipline (All enviroment are set at application config json file)
-	- In the end of test case playwright made printscreen, you need to change directory were to save jpg
-	- Two test case for login page
+	- New playwright project created
+	- Test case covered by SpecFlow
+	- All automation framework is ready to deploy to any CI/CD pipeline (All environments are set at application config json file)
+	- At the end of the test case playwright makes printscreens, you need to change directory were to save jpg
+	- Two test cases for login page
 
 - Was not made:
-	- Strange behavior of chroium was observed. With correct logins I get an error "Captcha check failed. Try submitting your form again."
+	- Strange behavior of chromium was observed. With correct logins an error appears "Captcha check failed. Try submitting your form again."
